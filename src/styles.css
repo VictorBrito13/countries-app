@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --dark-blue_dark_mode_elements: hsl(209, 23%, 22%);
+    --very-dark-blue_dark_mode_bg:hsl(207, 26%, 17%);
+    --very-dark-blue_light_mode_text: hsl(200, 15%, 8%);
+    --dark-gray_light_mode_input: hsl(0, 0%, 52%);
+    --very-light-gray_light_mode_bg: hsl(0, 0%, 98%);
+    --white_dark_mode_text_AND_lihgt_mode_elements: hsl(0, 0%, 100%);
+    --font-family-global: 'Nunito Sans'
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+    font-family: var(--font-family-global);
+}
+input, select, option{
+    outline: 0px;
+}
+
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: var(--very-dark-blue_dark_mode_bg);
+        color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
+    }
+    input::placeholder{
+        color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
+    }
+    input, select{
+        color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
+    }
+}
+
+@media (prefers-color-scheme: light){
+    body{
+        background-color: var(--very-light-gray_light_mode_bg);
+        color: var(--dark-gray_light_mode_input);
+    }
+    input::placeholder{
+        color: var(--dark-gray_light_mode_input);
+    }
+    input, select{
+        color: var(--dark-gray_light_mode_input);
+    }
+}
