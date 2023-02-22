@@ -5,8 +5,13 @@
     --very-dark-blue_light_mode_text: hsl(200, 15%, 8%);
     --dark-gray_light_mode_input: hsl(0, 0%, 52%);
     --very-light-gray_light_mode_bg: hsl(0, 0%, 98%);
+    --font-family-global: 'Nunito Sans';
     --white_dark_mode_text_AND_lihgt_mode_elements: hsl(0, 0%, 100%);
-    --font-family-global: 'Nunito Sans'
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;
 }
 
 body{
@@ -15,13 +20,22 @@ body{
     font-size: 1rem;
     font-family: var(--font-family-global);
 }
+a{
+    text-decoration: none;
+}
 input, select, option{
     outline: 0px;
 }
 
 @media (prefers-color-scheme: dark){
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--dark-blue_dark_mode_elements);
+    }
     body{
         background-color: var(--very-dark-blue_dark_mode_bg);
+        color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
+    }
+    a{
         color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
     }
     input::placeholder{
@@ -33,6 +47,9 @@ input, select, option{
 }
 
 @media (prefers-color-scheme: light){
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
+    }
     body{
         background-color: var(--very-light-gray_light_mode_bg);
         color: var(--dark-gray_light_mode_input);
@@ -44,3 +61,5 @@ input, select, option{
         color: var(--dark-gray_light_mode_input);
     }
 }
+
+/** RESPONSIVE  */

@@ -1,3 +1,8 @@
 <div class="component-container">
     <app-search-country></app-search-country>
+    <div class="countries-container">
+        <app-county-p
+        *ngFor="let country of countriesLazy; trackBy: trackByArea"
+        [country]="country"></app-county-p>
+    </div>
 </div>
