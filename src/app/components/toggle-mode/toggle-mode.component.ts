@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-toggle-mode',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toggle-mode.component.css']
 })
 export class ToggleModeComponent implements OnInit {
+  public faMoon = faMoon
+  public mode = "Dark"
 
   constructor() { }
 

@@ -1,0 +1,14 @@
+.component-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    margin: 0px;
+}
+.toggle-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
