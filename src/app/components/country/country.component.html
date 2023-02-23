@@ -1,1 +1,15 @@
-<p>country works!</p>
+<div class="country-container">
+    <a [routerLink]="['/country/' + country.name.official]">
+        <div>
+            <figure class="country-img-container">
+                <img src="{{country.flags.png}}" alt="{{country.flags.alt}}" loading="lazy" height="150" width="250" class="country-img">
+                <figcaption class="country-name">{{country.name.official}}</figcaption>
+            </figure>
+            <ul class="country-info-list">
+                <li class="country-info-item"><span>Population:</span> {{country.population}}</li>
+                <li class="country-info-item"><span>Region:</span> {{country.region}}</li>
+                <li class="country-info-item"><span>Capital(s):</span> {{country.capital}}</li>
+            </ul>
+        </div>
+    </a>
+</div>

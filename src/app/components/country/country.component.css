@@ -1,0 +1,39 @@
+.country-container{
+    width: 100%;
+    cursor: pointer;
+}
+.country-container a > div{
+    width: 90%;
+    margin: auto;
+    background-color: var(--dark-blue_dark_mode_elements);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-color .2s linear;
+}
+.country-container a > div:hover{
+    transition: background-color .2s linear;
+    background-color: transparent;
+}
+.country-img-container{
+    margin: 0px;
+    padding: 0px;
+}
+.country-img{
+    margin: auto;
+    display: block;
+}
+.country-name{
+    font-weight: 800;
+    font-size: 1.2rem;
+    width: 80%;
+    margin: auto;
+}
+.country-info-list{
+    list-style: none;
+    width: 80%;
+    padding: 0px;
+    margin: 15px auto;
+}
+.country-info-item span{
+    font-weight: 600;
+}
