@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpCountriesService {
-  private url = "https://restcountries.com/v3.1/"
+  private url = "https://restcountries.com/v3.1"
 
   constructor(
     private http: HttpClient
@@ -18,8 +18,13 @@ export class HttpCountriesService {
   }
 
   getCountries(): Observable<any> {
-    const headers = new HttpHeaders()
+    const headers = new HttpHeaders().set('Content-Type', 'application/json')
     return this.http.get(`${this.url}/all`, { headers })
+  }
+
+  getCountry(name: string): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json')
+    return this.http.get(`${this.url}/name/${name}`, { headers })
   }
 
 }

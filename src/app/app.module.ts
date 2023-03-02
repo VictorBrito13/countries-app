@@ -13,7 +13,8 @@ import { CountryComponent } from './components/country/country.component';
 //*Pages
 import { AllCoutriesComponent } from './pages/all-coutries/all-coutries.component';
 import { CountyPComponent } from './pages/county-p/county-p.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormatLargeNumbersPipe } from './pipes/format-large-numbers.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     SearchCountryComponent,
     ToggleModeComponent,
     CountryComponent,
-    CountyPComponent
+    CountyPComponent,
+    FormatLargeNumbersPipe
   ],
   imports: [
     BrowserModule,

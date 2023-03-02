@@ -20,11 +20,25 @@ body{
     font-size: 1rem;
     font-family: var(--font-family-global);
 }
+h2{
+    margin: 0%;
+}
+figure{
+    margin: 0px;
+    padding: 0px;
+}
+img{
+    object-fit: contain;
+}
 a{
     text-decoration: none;
 }
 input, select, option{
     outline: 0px;
+}
+ul{
+    padding: 0px;
+    list-style: none;
 }
 
 @media (prefers-color-scheme: dark){
@@ -61,5 +75,3 @@ input, select, option{
         color: var(--dark-gray_light_mode_input);
     }
 }
-
-/** RESPONSIVE  */

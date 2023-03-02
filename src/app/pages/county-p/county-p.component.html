@@ -1,0 +1,46 @@
+<div class="component-container">
+    <a [routerLink]="['/all-countries']">
+        <fa-icon [icon]="faArrow"></fa-icon>
+        Back
+    </a>
+    <div class="country-container" *ngIf="country">
+        <figure>
+            <img class="country-img" src="{{country.flags.png}}" alt="{{country.flags.alt}}" height="400" width="500" class="country-img">
+        </figure>
+        <div class="country-info-container">
+            <!-- ? First row -->
+            <h2>{{country.name.common}}</h2>
+            <!-- ? Second row -->
+            <div class="country-info">
+                <ul>
+                    <li>Native Name: <span>{{country.name.official}}</span></li>
+                    <li>Population: <span>{{country.population | formatLargeNumbers}}</span></li>
+                    <li>Region: <span>{{country.region}}</span></li>
+                    <li>Sub Region: <span>{{country.subregion}}</span></li>
+                    <li>Capital: <span>{{country.capital}}</span></li>
+                </ul>
+                <ul>
+                <li>Top Level Domain: <span>{{country.tld}}</span></li>
+                <!-- * Array -->
+                <li>Currency(ies):
+                    <span *ngFor="let currencyObj of country?.currencies | keyvalue">
+                        <span class="currency" *ngFor="let currency of currencyObj.value | keyvalue">{{currency.value}} </span> <br>
+                    </span>
+                </li>
+                <!-- * Array -->
+                <li>Language(s):
+                    <span *ngFor="let language of country.languages | keyvalue">{{language.value}} &nbsp; </span>
+                </li>
+                </ul>
+            </div>
+            <!-- ? Third row -->
+            <div class="neighbors-container">
+                <h4>Border Countries:</h4> &nbsp;
+                <!-- * These are an array -->
+                <span class="neighbor" *ngFor="let border of country.borders">{{border}}</span>
+                <span class="neighbor" *ngIf="!country.borders"> No One </span>
+                <!-- * -->
+            </div>
+        </div>
+    </div>
+</div>
