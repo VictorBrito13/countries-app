@@ -15,6 +15,9 @@ import { AllCoutriesComponent } from './pages/all-coutries/all-coutries.componen
 import { CountyPComponent } from './pages/county-p/county-p.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormatLargeNumbersPipe } from './pipes/format-large-numbers.pipe';
+import { SearchCountriesComponent } from './components/search-countries/search-countries.component';
+import { CountriesComponent } from './components/countries/countries.component';
+import { NoCountriesFoundComponent } from './components/no-countries-found/no-countries-found.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { FormatLargeNumbersPipe } from './pipes/format-large-numbers.pipe';
     ToggleModeComponent,
     CountryComponent,
     CountyPComponent,
-    FormatLargeNumbersPipe
+    FormatLargeNumbersPipe,
+    SearchCountriesComponent,
+    CountriesComponent,
+    NoCountriesFoundComponent
   ],
   imports: [
     BrowserModule,

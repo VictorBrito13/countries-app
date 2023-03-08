@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CountriesComponent } from './components/countries/countries.component';
+import { SearchCountriesComponent } from './components/search-countries/search-countries.component';
 import { AllCoutriesComponent } from './pages/all-coutries/all-coutries.component';
 import { CountyPComponent } from './pages/county-p/county-p.component';
 
@@ -7,11 +9,21 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'all-countries'
+    redirectTo: 'countries/all'
   },
   {
-    path: 'all-countries',
-    component: AllCoutriesComponent
+    path: 'countries',
+    component: CountriesComponent,
+    children: [
+      {
+        path: 'all',
+        component: AllCoutriesComponent
+      },
+      {
+        path: 'search',
+        component: SearchCountriesComponent
+      }
+    ]
   },
   {
     path: 'country/:name',

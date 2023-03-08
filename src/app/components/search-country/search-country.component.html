@@ -2,7 +2,10 @@
     <form action="" class="search-country">
         <span>
             <fa-icon [icon]="faSearch" class="icon"></fa-icon>
-            <input type="search" class="search" placeholder="Search for a country...">
+            <input
+            #searchInput
+            type="search" class="search" placeholder="Search for a country..."
+            (input)="search(searchInput.value)">
         </span>
         <select class="filter">
             <option value="none">Filter By Region</option>

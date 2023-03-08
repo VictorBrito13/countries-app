@@ -1,0 +1,7 @@
+.component-container{
+    display: flex;
+    place-content: center;
+}
+p{
+    font-size: 3rem;
+}

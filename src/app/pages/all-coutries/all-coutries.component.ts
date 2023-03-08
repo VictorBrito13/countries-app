@@ -26,7 +26,7 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-      this.scrollListener()
+    this.scrollListener()
   }
 
 
