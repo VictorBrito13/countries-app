@@ -58,6 +58,15 @@ ul{
     input, select{
         color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
     }
+    .country-container a > div{
+        background-color: var(--dark-blue_dark_mode_elements);
+    }
+    .back{
+        background-color: var(--dark-blue_dark_mode_elements);
+    }
+    .neighbor{
+        background-color: var(--dark-blue_dark_mode_elements);
+    }
 }
 
 @media (prefers-color-scheme: light){
@@ -68,10 +77,29 @@ ul{
         background-color: var(--very-light-gray_light_mode_bg);
         color: var(--dark-gray_light_mode_input);
     }
+    a{
+        color: var(--very-dark-blue_light_mode_text);
+    }
     input::placeholder{
         color: var(--dark-gray_light_mode_input);
     }
     input, select{
         color: var(--dark-gray_light_mode_input);
+    }
+    .toggle-container{
+        color: var(--very-dark-blue_light_mode_text);
+    }
+    .country-container a > div{
+        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
+    }
+    .back{
+        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
+        box-shadow: 0px 0px 2px var(--very-dark-blue_light_mode_text);
+    }
+    .country-container{
+        color: var(--very-dark-blue_light_mode_text);
+    }
+    .neighbor{
+        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
     }
 }
