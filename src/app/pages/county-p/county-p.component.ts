@@ -34,7 +34,6 @@ export class CountyPComponent implements OnInit, AfterViewInit {
     this._http.getCountry(name).subscribe({
       next: res => {
         this.country = res[0]
-        console.log(res[0].currencies)
       },
       error: err => console.log(err)
     })

@@ -1,7 +1,8 @@
 <div class="component-container">
     <h1><a [routerLink]="['countries/all']">Where is the world?</a></h1>
-    <span class="toggle-container">
-        <fa-icon [icon]="faMoon"></fa-icon>
+    <span class="toggle-container" (click)="changeMode()">
+        <fa-icon *ngIf="mode === 'Dark'" [icon]="faMoon"></fa-icon>
+        <fa-icon *ngIf="mode === 'Light' " [icon]="faSun"></fa-icon>
         <h4>{{mode}} Mode</h4>
     </span>
 </div>
