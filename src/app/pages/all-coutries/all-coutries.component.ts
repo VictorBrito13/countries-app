@@ -11,6 +11,7 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
   public countriesLazy: any[]
   private countriesPart: any[]
   private requestLimit: number
+  public requestError = false
 
   constructor(
     private _http: HttpCountriesService
@@ -50,7 +51,7 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
         this.countriesPart = this.countries.splice(0, this.requestLimit)
         this.countriesLazy = [...this.countriesPart]
       },
-      error: err => console.log(err)
+      error: err => this.requestError = true
     })
   }
 

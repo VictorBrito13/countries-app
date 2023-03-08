@@ -5,7 +5,6 @@
 .country-container a > div{
     width: 90%;
     margin: auto;
-    background-color: var(--dark-blue_dark_mode_elements);
     border-radius: 5px;
     overflow: hidden;
     transition: background-color .2s linear;

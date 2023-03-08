@@ -1,4 +1,5 @@
 <div class="component-container">
+    <p *ngIf="requestError" class="requestError">We have a errror try more later</p>
     <div class="countries-container">
         <app-country
         *ngFor="let country of countriesLazy; trackBy: trackByArea"
