@@ -7,7 +7,7 @@
             type="search" class="search" placeholder="Search for a country..."
             (input)="search(searchInput.value)">
         </span>
-        <select class="filter">
+        <select #filterInput class="filter" (change)="filterChange(filterInput.value)">
             <option value="none">Filter By Region</option>
             <option value="africa">Africa</option>
             <option value="america">America</option>

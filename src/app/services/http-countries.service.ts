@@ -27,4 +27,9 @@ export class HttpCountriesService {
     return this.http.get(`${this.url}/name/${name}`, { headers })
   }
 
+  getCountriesByRegion(region:string): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json')
+    return this.http.get(`${this.url}/region/${region}`, { headers })
+  }
+
 }

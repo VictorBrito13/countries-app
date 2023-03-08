@@ -18,6 +18,7 @@ import { FormatLargeNumbersPipe } from './pipes/format-large-numbers.pipe';
 import { SearchCountriesComponent } from './components/search-countries/search-countries.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { NoCountriesFoundComponent } from './components/no-countries-found/no-countries-found.component';
+import { FilterCoutriesComponent } from './components/filter-coutries/filter-coutries.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NoCountriesFoundComponent } from './components/no-countries-found/no-co
     FormatLargeNumbersPipe,
     SearchCountriesComponent,
     CountriesComponent,
-    NoCountriesFoundComponent
+    NoCountriesFoundComponent,
+    FilterCoutriesComponent
   ],
   imports: [
     BrowserModule,

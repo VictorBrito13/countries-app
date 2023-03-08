@@ -1,0 +1,7 @@
+<div class="component-container">
+    <app-no-countries-found *ngIf="noCountries"></app-no-countries-found>
+    <app-country
+    *ngFor="let country of countries"
+    [country]="country"
+    ></app-country>
+</div>

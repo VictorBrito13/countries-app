@@ -32,4 +32,8 @@ export class SearchCountryComponent implements OnInit, AfterViewInit {
     if(value.length === 0) this._router.navigate(['countries/search'])
   }
 
+  filterChange(region: string){
+    this._router.navigate(['countries/filter'], { queryParams: { 'region' : region } })
+  }
+
 }
