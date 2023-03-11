@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpCountriesService } from 'src/app/services/http-countries.service';
+import { db } from 'src/app/indexdb/countriesDB';
 
 @Component({
   selector: 'app-all-coutries',
@@ -22,8 +23,15 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
     this.requestLimit = 50
   }
 
-  ngOnInit(): void {
-    this.getCountries()
+  async ngOnInit(): Promise<void> {
+    if((await db.countries.toArray()).length > 0){
+      const elements = await db.countries.toArray()
+      this.countries = elements
+      this.countriesPart = this.countries.splice(0, this.requestLimit)
+      this.countriesLazy = [...this.countriesPart]
+    }else{
+      this.getCountries()
+    }
   }
 
   ngAfterViewInit(): void {
@@ -46,10 +54,11 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
 
   getCountries(): void {
     this._http.getCountries().subscribe({
-      next: res => {
+      next: async res => {
         this.countries = res
         this.countriesPart = this.countries.splice(0, this.requestLimit)
         this.countriesLazy = [...this.countriesPart]
+        this.addCountriesToIndexedDB(res)
       },
       error: err => this.requestError = true
     })
@@ -57,6 +66,12 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
 
   trackByArea(index:number, country:any){
     return country.area
+  }
+
+  addCountriesToIndexedDB(items: any[]){
+    db.transaction('rw', db.countries, async () => {
+      await db.countries.bulkAdd(items)
+    })
   }
 
 }
