@@ -1,12 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
-    --dark-blue_dark_mode_elements: hsl(209, 23%, 22%);
-    --very-dark-blue_dark_mode_bg:hsl(207, 26%, 17%);
-    --very-dark-blue_light_mode_text: hsl(200, 15%, 8%);
-    --dark-gray_light_mode_input: hsl(0, 0%, 52%);
-    --very-light-gray_light_mode_bg: hsl(0, 0%, 98%);
     --font-family-global: 'Nunito Sans';
-    --white_dark_mode_text_AND_lihgt_mode_elements: hsl(0, 0%, 100%);
+    --bg: hsl(207, 26%, 17%); /* hsl(0, 0%, 98%) */
+    --bg-elements: hsl(209, 23%, 22%); /* hsl(0, 0%, 100%) */
+    --color-text: hsl(0, 0%, 100%); /* hsl(200, 15%, 8%) */
+    --color-input: hsl(0, 0%, 100%); /* hsl(0, 0%, 52%) */
 }
 
 ::-webkit-scrollbar{
@@ -41,65 +39,28 @@ ul{
     list-style: none;
 }
 
-@media (prefers-color-scheme: dark){
-    ::-webkit-scrollbar-thumb{
-        background-color: var(--dark-blue_dark_mode_elements);
-    }
-    body{
-        background-color: var(--very-dark-blue_dark_mode_bg);
-        color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
-    }
-    a{
-        color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
-    }
-    input::placeholder{
-        color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
-    }
-    input, select{
-        color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
-    }
-    .country-container a > div{
-        background-color: var(--dark-blue_dark_mode_elements);
-    }
-    .back{
-        background-color: var(--dark-blue_dark_mode_elements);
-    }
-    .neighbor{
-        background-color: var(--dark-blue_dark_mode_elements);
-    }
+::-webkit-scrollbar-thumb{
+    background-color: var(--dark-blue_dark_mode_elements);
 }
-
-@media (prefers-color-scheme: light){
-    ::-webkit-scrollbar-thumb{
-        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
-    }
-    body{
-        background-color: var(--very-light-gray_light_mode_bg);
-        color: var(--dark-gray_light_mode_input);
-    }
-    a{
-        color: var(--very-dark-blue_light_mode_text);
-    }
-    input::placeholder{
-        color: var(--dark-gray_light_mode_input);
-    }
-    input, select{
-        color: var(--dark-gray_light_mode_input);
-    }
-    .toggle-container{
-        color: var(--very-dark-blue_light_mode_text);
-    }
-    .country-container a > div{
-        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
-    }
-    .back{
-        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
-        box-shadow: 0px 0px 2px var(--very-dark-blue_light_mode_text);
-    }
-    .country-container{
-        color: var(--very-dark-blue_light_mode_text);
-    }
-    .neighbor{
-        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
-    }
+body{
+    background-color: var(--bg);
+    color: var(--color-text);
+}
+a{
+    color: var(--color-text);
+}
+input::placeholder{
+    color: var(--color-input);
+}
+input, select{
+    color: var(--color-input);
+}
+.country-container a > div{
+    background-color: var(--bg-elements);
+}
+.back{
+    background-color: var(--bg-elements);
+}
+.neighbor{
+    background-color: var(--bg-elements);
 }
