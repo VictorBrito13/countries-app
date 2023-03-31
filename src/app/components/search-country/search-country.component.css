@@ -42,7 +42,7 @@
 
 @media (prefers-color-scheme: light){
     .search, .filter, .search-country span{
-        background-color: var(--white_dark_mode_text_AND_lihgt_mode_elements);
+        background-color: var(--bg-elements);
     }
 }
 

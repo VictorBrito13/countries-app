@@ -28,9 +28,6 @@ figure{
 img{
     object-fit: contain;
 }
-a{
-    text-decoration: none;
-}
 input, select, option{
     outline: 0px;
 }
@@ -48,6 +45,9 @@ body{
 }
 a{
     color: var(--color-text);
+    text-decoration: none;
+    display: block;
+    height: 100%;
 }
 input::placeholder{
     color: var(--color-input);
