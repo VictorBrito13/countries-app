@@ -1,4 +1,5 @@
 <div class="component-container">
+    <app-loader *ngIf="loading"></app-loader>
     <a [routerLink]="['/countries/all']" class="back">
         <fa-icon [icon]="faArrow"></fa-icon>
         Back

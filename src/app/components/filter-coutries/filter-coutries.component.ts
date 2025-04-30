@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class FilterCoutriesComponent implements OnInit {
   public countries!: any[]
   public noCountries = true
+  public isLoading = true
 
   constructor(
     private _http: HttpCountriesService,
@@ -29,6 +30,7 @@ export class FilterCoutriesComponent implements OnInit {
       next: res => {
         this.countries = res
         this.noCountries = false
+        this.isLoading = false
       },
       error: err => {
         if(err.status === 404) {

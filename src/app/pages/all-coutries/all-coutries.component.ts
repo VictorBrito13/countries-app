@@ -13,6 +13,7 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
   private countriesPart: any[]
   private requestLimit: number
   public requestError = false
+  public isLoading = true
 
   constructor(
     private _http: HttpCountriesService
@@ -29,6 +30,7 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
       this.countries = elements
       this.countriesPart = this.countries.splice(0, this.requestLimit)
       this.countriesLazy = [...this.countriesPart]
+      this.isLoading = false
     }else{
       this.getCountries()
     }
@@ -59,8 +61,13 @@ export class AllCoutriesComponent implements OnInit, AfterViewInit {
         this.countriesPart = this.countries.splice(0, this.requestLimit)
         this.countriesLazy = [...this.countriesPart]
         this.addCountriesToIndexedDB(res)
+        this.isLoading = false
       },
-      error: err => this.requestError = true
+      error: err => {
+        this.requestError = true
+        this.isLoading = false
+        console.error(err)
+      }
     })
   }
 

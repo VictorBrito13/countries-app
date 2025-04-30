@@ -12,6 +12,7 @@ import { ICountry } from 'src/app/interfaces/country';
 export class CountyPComponent implements OnInit, AfterViewInit {
   public faArrow = faArrowLeft
   public country!: ICountry
+  public loading: boolean = true
 
   constructor(
     private _http: HttpCountriesService,
@@ -34,8 +35,12 @@ export class CountyPComponent implements OnInit, AfterViewInit {
     this._http.getCountry(name).subscribe({
       next: res => {
         this.country = res[0]
+        this.loading = false
       },
-      error: err => console.log(err)
+      error: err => {
+        console.log(err)
+        this.loading = false
+      }
     })
   }
 

@@ -1,4 +1,5 @@
 <div class="component-container">
+    <app-loader *ngIf="isLoading"></app-loader>
     <app-no-countries-found *ngIf="noCountries"></app-no-countries-found>
     <div class="countries-container">
         <app-country

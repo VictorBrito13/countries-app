@@ -1,5 +1,9 @@
 <div class="component-container">
+    <!-- Error message -->
     <p *ngIf="requestError" class="requestError">We have a errror try more later</p>
+    <!-- Loader -->
+    <app-loader *ngIf="isLoading"></app-loader>
+    <!-- Countries -->
     <div class="countries-container">
         <app-country
         *ngFor="let country of countriesLazy; trackBy: trackByArea"

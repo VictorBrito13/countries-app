@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'country/:name',
     component: CountyPComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'countries/all'
   }
 ];
 

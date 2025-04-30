@@ -19,6 +19,7 @@ import { SearchCountriesComponent } from './components/search-countries/search-c
 import { CountriesComponent } from './components/countries/countries.component';
 import { NoCountriesFoundComponent } from './components/no-countries-found/no-countries-found.component';
 import { FilterCoutriesComponent } from './components/filter-coutries/filter-coutries.component';
+import { LoaderComponent } from './components/UI/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FilterCoutriesComponent } from './components/filter-coutries/filter-cou
     SearchCountriesComponent,
     CountriesComponent,
     NoCountriesFoundComponent,
-    FilterCoutriesComponent
+    FilterCoutriesComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
